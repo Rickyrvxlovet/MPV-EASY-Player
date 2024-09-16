@@ -1,0 +1,24 @@
+name: Clone Releases
+
+on:
+  # Trigger the workflow manually
+  workflow_dispatch:
+  # Schedule the workflow to run every 12 hours
+  schedule:
+    - cron: "0 */12 * * *"
+
+jobs:
+  clone-releases:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Clone releases
+        uses: andrewthetechie/gha-clone-releases@v1.9.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          src_repo: ' 422658476/MPV-EASY-Player'
+          dest_repo: 'Rickyrvxlovet/MPV-EASY-Player'
+          copy_assets: 'true'
