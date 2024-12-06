@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
   # Schedule the workflow to run every 12 hours
   schedule:
-    - cron: "0 */12 * * *"
+    - cron: "0 0,12 * * *"
 
 jobs:
   clone-releases:
@@ -20,5 +20,5 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           src_repo: ' 422658476/MPV-EASY-Player'
-          dest_repo: 'Rickyrvxlovet/MPV-EASY-Player'
+          dest_repo: 'rodtang1973/MPV-EASY-Player'
           copy_assets: 'true'
